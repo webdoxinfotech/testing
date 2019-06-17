@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="1" cellpadding="10" cellspacing="0" width="100%"><tr><th>Id</th><th>Username</th><th>Password</th><th>Delete</th></tr>
+{% for x in data %}
+<tr><td>{{ x['id'] }}</td><td>{{ x['username'] }}</td><td>{{ x['password'] }}</td><td><a href="{{url_for('delete', id = x['id'] ) }}">Delete</a></td></tr>
+{% endfor %}
+</table>
+<br>
+<br>
+<a href="{{ url_for('insert') }}">Insert New Users</a>
+</body>
+</html>
